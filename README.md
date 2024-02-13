@@ -59,7 +59,7 @@ DATABASES = {
     },
 }
 ```
-如果您是Sqlite3，可以更改```'ENGINE': 'django.db.backends.mysql',```      
+如果您是Sqlite3，可以更改```'ENGINE': 'django.db.backends.mysql',```到```'ENGINE': 'django.db.backends.sqlite3',```           
 epg目录下面的settings.py里面有每一段语法的使用方法，浏览器打开链接即可
 #### SQlite3示例
 ```python
