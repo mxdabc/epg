@@ -107,5 +107,5 @@ python manage.py runserver 0.0.0.0:80
 浏览器访问http://ip地址:端口/admin/ 打开后台
 ##### （默认用户名密码：`admin/admin`请一定更改！)  
 - DIYP接口`http://127.0.0.1/api/diyp/` 需要提供参数 `?ch=CCTV1&date=20230309`
-### 第七步，可选：配置Nginx反代
-#### 省略，大概步骤就是配置nginx代理127.0.0.1的某个端口
+### 第七步，可选：配置Nginx反代、ssl加密证书（https）
+#### 省略，大概步骤就是配置nginx代理127.0.0.1的某个端口，ssl也是nginx配置
