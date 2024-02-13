@@ -6,7 +6,7 @@
 ## 需要CQYX点击下方链接     
 CQYX: https://discuz.mxdyeah.top/mxdyeah_discuz_thread-37-1-1.html         
         
-![运行照片](https://discuz.mxdyeah.top/data/attachment/forum/202402/13/150816dusi8uvsz6u6psy8.jpg)
+![运行照片](https://discuz.mxdyeah.top/data/attachment/forum/202402/13/191525h7i6jaugzh7wgd6p.jpg)
 ## 配置要求：
 - 服务器为Linux系统，需要安装Python，Python版本>=3.8
 - 服务器具有公网IP
