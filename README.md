@@ -1,6 +1,7 @@
 # mxd's EPG
 * 基于`python3`及`django4`的节目表数据抓取及发布系统
 * 网站地址:[mxd's EPG](https://epg.imxd.top/)
+* 失效请在 https://discuz.mxdyeah.top/mxdyeah_discuz_thread-63-1-1.html  反馈！
 ## 配置要求：
 - 服务器为Linux系统，需要安装Python，Python版本>=3.8
 - 服务器具有公网IP
