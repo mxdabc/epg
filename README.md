@@ -2,6 +2,9 @@
 * 基于`python3`及`django4`的节目表数据抓取及发布系统
 * 网站地址:[mxd's EPG](https://epg.imxd.top/)
 * 失效请在 https://discuz.mxdyeah.top/mxdyeah_discuz_thread-63-1-1.html  反馈！
+## 下面是在Prefect Player运行的照片，完美适配我的CQYX
+## 需要CQYX点击→ttps://discuz.mxdyeah.top/mxdyeah_discuz_thread-37-1-1.html    
+![运行照片](https://discuz.mxdyeah.top/data/attachment/forum/202402/13/150816dusi8uvsz6u6psy8.jpg)
 ## 配置要求：
 - 服务器为Linux系统，需要安装Python，Python版本>=3.8
 - 服务器具有公网IP
