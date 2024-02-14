@@ -4,7 +4,7 @@
 * 失效请在 https://discuz.mxdyeah.top/mxdyeah_discuz_thread-63-1-1.html  反馈！
 ## 下面是在Prefect Player运行的照片，完美适配我的CQYX
 ## 需要CQYX点击下方链接     
-CQYX: https://discuz.mxdyeah.top/mxdyeah_discuz_thread-37-1-1.html         
+CQYX: https://discuz.mxdyeah.top/mxdyeah_discuz_thread-37-1-1.html       
         
 ![运行照片](https://discuz.mxdyeah.top/data/attachment/forum/202402/13/191525h7i6jaugzh7wgd6p.jpg)
 ## 配置要求：
