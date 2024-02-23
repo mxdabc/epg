@@ -1,5 +1,6 @@
 #-*- coding:utf-8 -*-
 #未攫取成都没有能跳转到下一条，原因未知。未设置跳转下一条配置，但成功了就能到下一条了。
+
 import os, django, sys, datetime,platform
 from django.utils import timezone
 from utils.general import argvs_get, channel_ids_to_dict,in_exclude_channel
@@ -14,6 +15,8 @@ from utils.general import crawl_info,xmlinfo,dirs,add_info_title,add_info_desc,n
 recrawl, cname, crawl_dt, save_to_db = argvs_get(sys.argv)
 
 tz_sh = tz.gettz('Asia/Shanghai')
+# 设置时区 
+
 # 抓取入口
 
 def main():
