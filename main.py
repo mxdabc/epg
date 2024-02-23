@@ -1,4 +1,5 @@
 #-*- coding:utf-8 -*-
+
 import sys
 from crawl.crawl import main as start_crawl
 from utils.crawl_channel_lists import crawl
