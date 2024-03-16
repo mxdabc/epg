@@ -5,7 +5,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="免费EPG节目清单，IPTV">
+<meta name="description" content="免费EPG节目清单,IPTV">
 <meta name="keywords" content="IPTV,epg,m3u8,live,cctv,地方台,直播">
 <meta name="author" content="mxdyeah">
 <link rel="stylesheet" href="{% static "/css/bootstrap/4.3.1/bootstrap.min.css" %}" crossorigin="anonymous">
@@ -14,43 +14,103 @@
 <script src="{% static "/js/popper/1.14.7/popper.min.js" %}"  crossorigin="anonymous"></script>
 <script src="{% static "/js/bootstrap/4.3.1/bootstrap.min.js" %}"  crossorigin="anonymous"></script>
 <title>mxd's EPG - Powered by mxd</title>
+<style>
+    .mxd_diy_footer {
+        margin: 0 auto;
+        width: 1200px;
+    }
+
+    #mxd_diy_footer .mxd_diy_footer {
+        width: auto;
+    }
+
+    .mxd_diy_footer_zoom {
+        zoom: 1;
+    }
+    .hidden {
+      display: none;
+    }
+</style>
 </head>
 <body>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script type="text/javascript">
-  $(function () {
+    $(function () {
         $("img.lazy").lazyload();
     });
-
+    function showContent() {
+        var content = document.getElementById("content");
+        content.classList.remove("hidden");
+    }
+    function toggleContent() {
+        var content = document.getElementById("content");
+        var toggleBtn = document.getElementById("toggleBtn");
+        
+        if (content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+            toggleBtn.innerHTML = "点击收起详细内容";
+        } else {
+            content.classList.add("hidden");
+            toggleBtn.innerHTML = "点击显示详细内容";
+        }
+    }
 </script>
 <div class="container bg-light">
-    <div style="text-align: justify;">
+    <!-- <div style="text-align: justify;">
         <img src="https://res.mxdyeah.top/picture.jsp/money.jpg" style="width:400px;float: right; margin-right: 10px; clear: both;">
-    </div>
+    </div> -->
+    <br>
     <h1>mxd's EPG</h1>
-    <h6>开源Github:<a href="https://github.com/mxdabc/epg/">&NonBreakingSpace;Github地址，请给我们点个Star！</a></h6>
-    <h6>参考:<a href="https://github.com/supzhang/epg">老张的EPG</a></h6>
-    <h5>使用前请阅读：<a href="https://blog.mxdyeah.top/mxdyeah_blog_post/43.html">使用说明</a></h5>
-    <h5>请扫右边二维码赞助我们！否则我们可能停服！</h5>
-    <h5>我们提供DIYP接口！DIYP接口<code>https://epg.imxd.top/api/diyp/</code><br>使用DIYP需要提供参数，例如：<code>?ch=CCTV1&date=20230309</code></h5>
-    <h2>请珍惜服务器！不要恶意攻击！<br>赞助我们是我们前进的动力！</h2>
+    <br>
+
     <p style="text-wrap: wrap;">
-    <span style="font-size: 20px;"><strong>我们与<a href="http://epg.51zmt.top:8000/" style="text-wrap: wrap;">老张的EPG Since 2019 (51zmt.top)</a>的区别如下，各位需要用直接用这个链接：</strong></span>
+        <span style="font-size: 18px;"><strong>当前EPG服务器版本:V2.0-20240309，Github上有我们的最新版本，请各位保持更新最新版本！</strong></span>
     </p>
-    <p style="text-wrap: wrap;">
-        <span style="font-size: 20px;"><strong>节目表下载地址：</strong></span><a href="./download/all-mxdyeah.xml" style="font-size: 20px;"><strong>XML地址</strong></a>
-    </p>
-    <p style="text-wrap: wrap;">
-        <span style="font-size: 20px;"><strong>下载测试m3u文件:</strong></span><a href="./download/test.m3u" style="font-size: 20px;"><strong>测试</strong></a>
-    </p>
-    <p style="text-wrap: wrap;">
-        <span style="font-size: 20px;"><strong>央视及各省卫视：</strong></span><a href="./download/cc-mxdyeah.xml" style="font-size: 20px; text-decoration: underline;"><span style="font-size: 20px;"><strong>cc-mxdyeah.xml</strong></span></a>
-    </p>
-    <p style="text-wrap: wrap;">
-        <span style="font-size: 20px;"><strong>地方及数字付费：</strong></span><a href="./download/difang-mxdyeah.xml" style="font-size: 20px; text-decoration: underline;"><span style="font-size: 20px;"><strong>difang-mxdyeah.xml</strong></span></a><br/>
-    </p>
-    <p>EPG文件中提供{{ channel_no }}个频道 {{ crawl_day }}天内节目表共 {{ epg_no }} 条，<br/>现在提供时间为： {{ start_date }}  -  {{ end_date }} </p>
+    <button onclick="toggleContent()">点击显示/收起详细内容</button>
+    <div id="content" class="hidden">
+        <p>
+            <div style="text-align: justify;">
+                <img src="https://res.mxdyeah.top/picture.jsp/money.jpg" style="width:400px;float: right; margin-right: 10px; clear: both;">
+            </div>
+            <br>
+            <h3>搭配方案看这里！↓   👇</h3>
+            <h3><a href="https://blog.mxdyeah.top/mxdyeah_blog_post/44.html">EPG+CQYX 最完美搭配方法（CCTV+地方台全部包含）</a></h3><br>
+            <h6>开源Github:<a href="https://github.com/mxdabc/epg/">&NonBreakingSpace;Github地址，请给我们点个Star！</a></h6>
+            <h6>参考:<a href="https://github.com/supzhang/epg">老张的EPG</a></h6>
+            <h5>使用前请阅读：<a href="https://blog.mxdyeah.top/mxdyeah_blog_post/43.html">使用说明</a></h5>
+            <h5>请扫右边二维码赞助我们！否则我们可能停服！</h5>
+            <h5>我们提供DIYP接口！DIYP接口<code>https://epg.imxd.top/api/diyp/</code><br>使用DIYP需要提供参数，例如：<code>?ch=CCTV1&date=20230309</code></h5>
+            <h3>请珍惜服务器！不要恶意攻击！<br>赞助我们是我们前进的动力！</h3>
+            <h5><strong>Tips:</strong></h5>
+            <h5>我本人是一位中学生，正在努力进步，有问题联系我我也只能周末回复。抱歉！<br><a href="mailto:me@imxd.top">me#imxd.top(点击此处发邮件,#换@)</a></h5>
+            <h6>目前CGTN EPG暂无，我们正在努力找源</h6>
+            <h6>海南卫视原名旅游卫视，所以二者是一个东西，我们采用海南卫视新台标。</h6>
+            <h6>如果您发现EPG错误，或者导入不了等状况，请单击这里发帖反馈→&NonBreakingSpace;<a href="https://discuz.mxdyeah.top/mxdyeah_discuz_thread-63-1-1.html">发帖反馈区</a></h6>
+            <h6><strong>记住我们的地址在域名后面还有一个<code>download</code>，比如<code>https://epg.imxd.top/download/all-mxdyeah.xml</code></strong></h6>
+            <h6><strong>我们的域名支持https这样的SSL加密，建议各位通过<code>https://epg.imxd.top/</code>访问（http不受影响）</strong></h6>
+            <p style="text-wrap: wrap;">
+            <span style="font-size: 18px;"><strong>我们与<a href="http://epg.51zmt.top:8000/" style="text-wrap: wrap;">老张的EPG Since 2019 (51zmt.top)</a>的区别如下，各位需要用直接用下面的链接：</strong></span>
+            </p>
+            <p style="text-wrap: wrap;">
+                <span style="font-size: 18px;"><strong>节目表下载地址：</strong></span><a href="./download/all-mxdyeah.xml" style="font-size: 18px;"><strong>all-mxdyeah.xml</strong></a>
+            </p>
+            <p style="text-wrap: wrap;">
+                <span style="font-size: 18px;"><strong>下载测试m3u文件(地址为空，仅供研究使用):</strong></span><a href="./download/test.m3u" style="font-size: 18px;"><strong>测试m3u</strong></a>
+            </p>
+            <p style="text-wrap: wrap;">
+                <span style="font-size: 18px;"><strong>搭配节目表最佳m3u文件:</strong></span><a href="https://live.imxd.top/epg.m3u8" style="font-size: 18px;"><strong>&NonBreakingSpace;https://live.imxd.top/epg.m3u[ 基于cqyx，因为我在重庆 :) ]</strong></a>
+            </p>
+            <p><em>上面的cqyx用不了的话，还是自己下载测试m3u自己修改吧！反正重庆、四川、河南亲测可用</em></p>
+            <p style="text-wrap: wrap;">
+                <span style="font-size: 18px;"><strong>央视及各省卫视EPG列表：</strong></span><a href="./download/cc-mxdyeah.xml" style="font-size: 18px; text-decoration: underline;"><span style="font-size: 18px;"><strong>cc-mxdyeah.xml</strong></span></a>
+            </p>
+            <p style="text-wrap: wrap;">
+                <span style="font-size: 18px;"><strong>地方及数字付费EPG列表：</strong></span><a href="./download/difang-mxdyeah.xml" style="font-size: 18px; text-decoration: underline;"><span style="font-size: 18px;"><strong>difang-mxdyeah.xml</strong></span></a>
+            </p>
+        </p>
+      </div>
+    <p style="text-wrap: wrap;"><div style="font-size: 22px;"><strong>EPG文件中提供{{ channel_no }}个频道 {{ crawl_day }}天内节目表共 {{ epg_no }} 条，<br/>现在提供时间为： {{ start_date }}  -  {{ end_date }} </strong></div></p>
         <table class="table table-striped table-primary table-hover">
             <thead class="thead-dark">
             <tr>
@@ -87,11 +147,19 @@
                     <td>{{ channel.last_program_date }}</td>
                 </tr>
             {% endfor %}
-
             </tbody>
         </table>
   </div>
   </body>
+  <footer>
+    <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#987cb9 SIZE=3>
+        <div id="mxdyeah_diy" class="mxd_diy_footer mxd_diy_footer_zoom">
+            mxd's EPG by&nbsp;<a href="https://www.mxdyeah.top/">mxd & mxd Team.</a>
+            <br>Built by <strong>mxd</strong> On Server: <em>Debian 11.</em>
+            <br>Powered by mxdyeah.
+            <br>Copyright&nbsp;©&nbsp;2021-2024 mxd Team.
+        </div>
+  </footer>
 </html>
 
 
