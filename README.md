@@ -2,6 +2,7 @@
 * 基于`python3`及`django4`的节目表数据抓取及发布系统
 * 网站地址:[mxd's EPG](https://epg.imxd.top/)
 * 失效请在 https://discuz.mxdyeah.top/mxdyeah_discuz_thread-63-1-1.html  反馈！
+# [使用方法&教程汇总贴](https://discuz.mxdyeah.top/mxdyeah_discuz_thread-68-1-1.html)
 ## 下面是在Prefect Player运行的照片，完美适配我的CQYX
 ## 需要CQYX点击下方链接     
 CQYX: https://discuz.mxdyeah.top/mxdyeah_discuz_thread-37-1-1.html       
@@ -13,7 +14,7 @@ CQYX: https://discuz.mxdyeah.top/mxdyeah_discuz_thread-37-1-1.html
 - 服务器需要放行8080端口（也可以改为别的，请看下文）
 - 服务器配置不低于8H8G，否则可能无法流畅运行
 ## 主要功能  
-- 从网上抓取各来源的节目表信息并生成[xmltv](http://wiki.xmltv.org/)格式文件，导入[Perfect Player](http://niklabs.com/)等APP直接载入节目表信息。
+- 从网上抓取各来源的节目表信息并生成[xmltv](http://wiki.xmltv.org/)格式文件，导入[Perfect Player]([http://niklabs.com/](https://blog.mxdyeah.top/mxdyeah_blog_post/29.html))等APP直接载入节目表信息。
 - 后台配置频道获取列表及抓取日志。
 - 抓取失败时自动更换来源。
 - 各数来源提供节目表的频道获取
