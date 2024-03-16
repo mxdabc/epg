@@ -14,7 +14,7 @@ CQYX: https://discuz.mxdyeah.top/mxdyeah_discuz_thread-37-1-1.html
 - 服务器需要放行8080端口（也可以改为别的，请看下文）
 - 服务器配置不低于8H8G，否则可能无法流畅运行
 ## 主要功能  
-- 从网上抓取各来源的节目表信息并生成[xmltv](http://wiki.xmltv.org/)格式文件，导入[Perfect Player]((https://blog.mxdyeah.top/mxdyeah_blog_post/29.html)等APP直接载入节目表信息。
+- 从网上抓取各来源的节目表信息并生成[xmltv](http://wiki.xmltv.org/)格式文件，导入[Perfect Player](https://blog.mxdyeah.top/mxdyeah_blog_post/29.html)等APP直接载入节目表信息。
 - 后台配置频道获取列表及抓取日志。
 - 抓取失败时自动更换来源。
 - 各数来源提供节目表的频道获取
