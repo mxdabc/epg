@@ -1,5 +1,19 @@
 #-*- coding:utf-8 -*-
 '''
+2024-03-17 更新说明 需要使用抓包软件抓到Auth的值
+参考下面代码，不一定可以用，关于此问题我也发帖到恩山论坛提问，会的可以联系我
+https://www.right.com.cn/forum/thread-8355283-1-1.html
+知道怎么搞的请在右边链接发帖！谢谢了  https://discuz.mxdyeah.top/mxdyeah_discuz_thread-70-1-1.html
+headers = {
+    # 'Cookie': '',
+    # 'Authorization': chuanliu_Authorization,
+    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI5ODQwODlhNjc1OGU0ZjJlOTViMjk4NWM4YjA1MDNmYiIsImNvbXBhbnkiOiJxaXlpIiwibmFtZSI6InRlcm1pbmFsIn0.1gDPpBcHJIE8dLiq7UekUlPWMtJOYymI8zoIYlsVgc4',
+    # 'X-Device-Id': '',
+    # 'User-Agent': '',
+    'User-Agent': 'okhttp/3.10.0.7',
+}
+'''
+'''
 2023-02-20四川移动：川流TV  APP获取
 需要 UA、cookies、Authorization、X-Device-Id（抓包获取，除Authorization其他非必须）,记不得是哪个链接了，自己试下就知道了
 '''
@@ -8,7 +22,7 @@ from utils.general import chuanliu_Authorization
 
 headers = {
     # 'Cookie': '',
-    'Authorization': chuanliu_Authorization, #必须填写川流TVtoken，否则无法访问
+    'Authorization': chuanliu_Authorization, #必须填写川流TVtoken，否则无法访问 注意添加过后需要用单引号引起来
     # 'X-Device-Id': '',
     # 'User-Agent': '',
 }
