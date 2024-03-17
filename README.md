@@ -2,6 +2,7 @@
 * 基于`python3`及`django4`的节目表数据抓取及发布系统
 * 网站地址:[mxd's EPG](https://epg.imxd.top/)
 * 失效请在 https://discuz.mxdyeah.top/mxdyeah_discuz_thread-63-1-1.html  反馈！
+* 川流TV没有获取Token看这里 [Token配置](https://github.com/mxdabc/epg/commit/aab86259b37bfec3cf209ae56d04f37a77cbafb5)
 # [使用方法&教程汇总贴](https://discuz.mxdyeah.top/mxdyeah_discuz_thread-68-1-1.html)
 ## 下面是在Prefect Player运行的照片，完美适配我的CQYX
 ## 需要CQYX点击下方链接     
