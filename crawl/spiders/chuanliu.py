@@ -8,7 +8,7 @@ from utils.general import chuanliu_Authorization
 
 headers = {
     # 'Cookie': '',
-    'Authorization': chuanliu_Authorization,
+    'Authorization': chuanliu_Authorization, #必须填写川流TVtoken，否则无法访问
     # 'X-Device-Id': '',
     # 'User-Agent': '',
 }
