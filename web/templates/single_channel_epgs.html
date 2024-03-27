@@ -5,8 +5,80 @@
     <meta name="description" content="免费EPG节目清单，IPTV">
     <meta name="keywords" content="IPTV,epg,m3u8,live,cctv,地方台,直播">
     <meta name="author" content="mxdyeah">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>{{ title }} - EPG节目清单 - mxd's EPG</title>
+    <!--<style>
+        table{
+            width: 60%;
+            border-collapse: collapse;
+        }
+        
+        table caption{
+            font-size: 2em;
+            font-weight: bold;
+            margin: 1em 0;
+        }
+        
+        th,td{
+            border: 1px solid #999;
+            text-align: center;
+            padding: 12px 0;
+        }
+        
+        table thead tr{
+            background-color: #008c8c;
+            color: #fff;
+        }
+        
+        table tbody tr:nth-child(odd){
+            background-color: #eee;
+        }
+        
+        table tbody tr:hover{
+            background-color: #ccc;
+        }
+        
+        table tbody tr td:first-child{
+            color: #f40;
+        }
+        
+        table tfoot tr td{
+            text-align: right;
+            padding-right: 12px;
+        }
+    </style>-->
+    <style>
+        /* Table Head */
+        .epg_footer {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        thead th {
+            background-color: rgb(128, 102, 160);
+            color: #fff;
+            border-bottom-width: 0;
+        }
+         
+         
+        /* Column Style */
+        td {
+            color: #000;
+        }
+        /* Heading and Column Style */
+        tr, th {
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(128, 102, 160);
+        }
+         
+         
+        /* Padding and font style */
+        td, th {
+            padding: 3px 10px;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 <div>
@@ -14,17 +86,32 @@
     <a href="{{ yesterday_url }}"><span>前一天</span></a>
     <a href="{{ tomorrow_url }}"><span>下一天</span></a>
     <ul>
-        {% for epg in epgs %}
-            <li><td>{{ epg.starttime }}</td>&nbsp&nbsp<td>{{ epg.title }}</td>&nbsp&nbsp<td>{{ epg.source }}</td></li>
-        {% endfor %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>EPG Name</th>
+                    <th>EPG Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for epg in epgs %}
+                <tr>
+                    <th>{{ epg.starttime }}</th>
+                    <th>{{ epg.title }}</th>
+                    <th>{{ epg.source }}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </ul>
 </div>
-</body>
 <footer>
-    <a href="https://epg.imxd.top/">mxd's&nbsp;EPG</a>
-    &nbsp;is&nbsp;Powered&nbsp;by&nbsp;
-    <a href="https://mxdyeah.top/">mxd.</a>
-    <br>
-    <a href="https://github.com/mxdabc/epg/">开源Github，请给我们一个Star！</a>
+    <div class="epg_footer">
+        <a href="https://epg.imxd.top/">mxd's&nbsp;EPG</a>&nbsp;is&nbsp;Powered&nbsp;by
+        <a href="https://mxdyeah.top/">mxd.</a><br>
+        <a href="https://github.com/mxdabc/epg/">开源Github，请给我们一个Star！</a>
+    </div>
 </footer>
+</body>
 </html>
