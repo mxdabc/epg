@@ -6,112 +6,137 @@
     <meta name="keywords" content="IPTV,epg,m3u8,live,cctv,地方台,直播">
     <meta name="author" content="mxdyeah">
     <title>{{ title }} - EPG节目清单 - mxd's EPG</title>
-    <!--<style>
-        table{
-            width: 60%;
-            border-collapse: collapse;
-        }
-        
-        table caption{
-            font-size: 2em;
-            font-weight: bold;
-            margin: 1em 0;
-        }
-        
-        th,td{
-            border: 1px solid #999;
-            text-align: center;
-            padding: 12px 0;
-        }
-        
-        table thead tr{
-            background-color: #008c8c;
-            color: #fff;
-        }
-        
-        table tbody tr:nth-child(odd){
-            background-color: #eee;
-        }
-        
-        table tbody tr:hover{
-            background-color: #ccc;
-        }
-        
-        table tbody tr td:first-child{
-            color: #f40;
-        }
-        
-        table tfoot tr td{
-            text-align: right;
-            padding-right: 12px;
-        }
-    </style>-->
     <style>
-        /* Table Head */
-        .epg_footer {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Hide scrollbar on body */
+            background-color: #f9f9f9;
         }
-        
-        thead th {
-            background-color: rgb(128, 102, 160);
-            color: #fff;
-            border-bottom-width: 0;
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
         }
-         
-         
-        /* Column Style */
-        td {
-            color: #000;
-        }
-        /* Heading and Column Style */
-        tr, th {
-            border-width: 1px;
-            border-style: solid;
-            border-color: rgb(128, 102, 160);
-        }
-         
-         
-        /* Padding and font style */
-        td, th {
-            padding: 3px 10px;
-            font-size: 12px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        .title {
+            font-size: 24px;
             font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .nav-buttons {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .prev-btn,
+        .next-btn {
+            padding: 10px 20px;
+            background: linear-gradient(to right, #9b5de5, #f15bb5);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .table-container {
+            width: 100%;
+            overflow: auto; /* Show scrollbar only for table */
+            flex-grow: 1;
+        }
+        .epg-header {
+            display: flex;
+            width: 100%;
+            background: linear-gradient(to right, #e0c3fc, #8ec5fc); /* Light purple gradient */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .epg-cell {
+            flex: 1;
+            padding: 12px 8px;
+            text-align: center;
+            border-right: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        .epg-cell:last-child {
+            border-right: none;
+        }
+        .epg-row {
+            display: flex;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+        }
+        .epg-row:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .epg-footer {
+            background-color: #f0f0f0;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .epg_footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Mobile Optimization */
+        @media only screen and (max-width: 600px) {
+            .title {
+                font-size: 20px;
+            }
+            .prev-btn,
+            .next-btn {
+                padding: 8px 16px;
+            }
+            .table-container {
+                overflow-x: auto;
+                overflow-y: hidden;
+                margin-top: 10px;
+            }
+            .epg-cell {
+                padding: 10px 6px;
+            }
         }
     </style>
 </head>
 <body>
-<div>
-    <h2>当前节目及日期：{{ title }}</h2>
-    <a href="{{ yesterday_url }}"><span>前一天</span></a>
-    <a href="{{ tomorrow_url }}"><span>下一天</span></a>
-    <ul>
-        <table>
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>EPG Name</th>
-                    <th>EPG Source</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for epg in epgs %}
-                <tr>
-                    <th>{{ epg.starttime }}</th>
-                    <th>{{ epg.title }}</th>
-                    <th>{{ epg.source }}</th>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </ul>
-</div>
-<footer>
-    <div class="epg_footer">
-        <a href="https://epg.imxd.top/">mxd's&nbsp;EPG</a>&nbsp;is&nbsp;Powered&nbsp;by
-        <a href="https://mxdyeah.top/">mxd.</a><br>
-        <a href="https://github.com/mxdabc/epg/">开源Github，请给我们一个Star！</a>
+<div class="container">
+    <h2 class="title">当前节目及日期：{{ title }}</h2>
+    <div class="nav-buttons">
+        <a class="prev-btn" href="{{ yesterday_url }}">前一天</a>
+        <a class="next-btn" href="{{ tomorrow_url }}">下一天</a>
     </div>
-</footer>
+    <div class="table-container">
+        <div class="epg-header">
+            <div class="epg-cell">Time</div>
+            <div class="epg-cell">EPG Name</div>
+            <div class="epg-cell">EPG Source</div>
+        </div>
+        {% for epg in epgs %}
+        <div class="epg-row">
+            <div class="epg-cell">{{ epg.starttime }}</div>
+            <div class="epg-cell">{{ epg.title }}</div>
+            <div class="epg-cell">{{ epg.source }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <footer class="epg-footer">
+        <div class="epg_footer">
+            <a href="https://epg.imxd.top/">mxd's&nbsp;EPG</a>&nbsp;is&nbsp;Powered&nbsp;by
+            <a href="https://mxdyeah.top/">mxd.</a><br>
+            <a href="https://github.com/mxdabc/epg/">开源Github，请给我们一个Star！</a>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
