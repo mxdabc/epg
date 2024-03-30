@@ -5,6 +5,7 @@
 # 常见问题
 * 抓取报错没有获取川流Token看这里→[配置教程](https://discuz.mxdyeah.top/mxdyeah_discuz_thread-70-1-1.html)←
 * 我该如何添加其他节目？
+
   * 部署完成后，打开 **[你的网站]/admin** 登录后添加抓取节目。
   * 不懂的可以新建Issues提问或者在[Here!](https://discuz.mxdyeah.top/mxdyeah_discuz_forum-38-1.html)发新帖提问。
 - [使用方法&教程汇总贴](https://discuz.mxdyeah.top/mxdyeah_discuz_thread-68-1-1.html)
