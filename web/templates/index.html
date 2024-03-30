@@ -4,6 +4,8 @@
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
+<link rel="icon" type="image/x-icon" href="https://res.mxdyeah.top/favicon.ico">
+<meta name="msvalidate.01" content="FA1512DCB7775B210429A98C20AC95AF" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="免费EPG节目清单,IPTV">
 <meta name="keywords" content="IPTV,epg,m3u8,live,cctv,地方台,直播">
@@ -27,8 +29,9 @@
     .mxd_diy_footer_zoom {
         zoom: 1;
     }
+    
     .hidden {
-      display: none;
+        display: none;
     }
 </style>
 </head>
@@ -65,7 +68,9 @@
     <br>
 
     <p style="text-wrap: wrap;">
-        <span style="font-size: 18px;"><strong>当前EPG服务器版本:V2.0-20240309，Github上有我们的最新版本，请各位保持更新最新版本！</strong></span>
+        <span style="font-size: 18px;"><strong>当前EPG服务器版本:V2.1-20240330，Github上有我们的最新版本，请各位保持更新最新版本！</strong></span>
+        <h6>开源Github:<a href="https://github.com/mxdabc/epg/" target="_blank">&NonBreakingSpace;Github地址，请给我们点个Star！</a></h6>
+        <h6>DIYP影音无法使用请检查TXT里面的频道名称是否与下表的tvg-name一一对应。</h6>
     </p>
     <button onclick="toggleContent()">点击显示/收起详细内容</button>
     <div id="content" class="hidden">
@@ -75,21 +80,20 @@
             </div>
             <br>
             <h3>搭配方案看这里！↓   👇</h3>
-            <h3><a href="https://blog.mxdyeah.top/mxdyeah_blog_post/44.html">EPG+CQYX 最完美搭配方法（CCTV+地方台全部包含）</a></h3><br>
-            <h6>开源Github:<a href="https://github.com/mxdabc/epg/">&NonBreakingSpace;Github地址，请给我们点个Star！</a></h6>
-            <h6>参考:<a href="https://github.com/supzhang/epg">老张的EPG</a></h6>
-            <h5>使用前请阅读：<a href="https://blog.mxdyeah.top/mxdyeah_blog_post/43.html">使用说明</a></h5>
+            <h3><a href="https://blog.mxdyeah.top/mxdyeah_blog_post/44.html" target="_blank">EPG+CQYX 最完美搭配方法（CCTV+地方台全部包含）</a></h3><br>
+            <h6>参考:<a href="https://github.com/supzhang/epg" target="_blank">老张的EPG</a></h6>
+            <h5>使用前请阅读：<a href="https://blog.mxdyeah.top/mxdyeah_blog_post/43.html" target="_blank">使用说明</a></h5>
             <h5>请扫右边二维码赞助我们！否则我们可能停服！</h5>
             <h5>我们提供DIYP接口！DIYP接口<code>https://epg.imxd.top/api/diyp/</code><br>使用DIYP需要提供参数，例如：<code>?ch=CCTV1&date=20230309</code></h5>
             <h3>请珍惜服务器！不要恶意攻击！<br>赞助我们是我们前进的动力！</h3>
             <h5><strong>Tips:</strong></h5>
             <h5>我本人是一位中学生，正在努力进步，有问题联系我我也只能周末回复。抱歉！<br><a href="mailto:me@imxd.top">me#imxd.top(点击此处发邮件,#换@)</a></h5>
             <h6>海南卫视原名旅游卫视，所以二者是一个东西，我们采用海南卫视新台标。</h6>
-            <h6>如果您发现EPG错误，或者导入不了等状况，请单击这里发帖反馈→&NonBreakingSpace;<a href="https://discuz.mxdyeah.top/mxdyeah_discuz_thread-63-1-1.html">发帖反馈区</a></h6>
+            <h6>如果您发现EPG错误，或者导入不了等状况，请单击这里发帖反馈→&NonBreakingSpace;<a href="https://discuz.mxdyeah.top/mxdyeah_discuz_thread-63-1-1.html" target="_blank">发帖反馈区</a></h6>
             <h6><strong>记住我们的地址在域名后面还有一个<code>download</code>，比如<code>https://epg.imxd.top/download/all-mxdyeah.xml</code></strong></h6>
             <h6><strong>我们的域名支持https这样的SSL加密，建议各位通过<code>https://epg.imxd.top/</code>访问（http不受影响）</strong></h6>
             <p style="text-wrap: wrap;">
-            <span style="font-size: 18px;"><strong>我们与<a href="http://epg.51zmt.top:8000/" style="text-wrap: wrap;">老张的EPG Since 2019 (51zmt.top)</a>的区别如下，各位需要用直接用下面的链接：</strong></span>
+            <span style="font-size: 18px;"><strong>我们与<a href="http://epg.51zmt.top:8000/" style="text-wrap: wrap;" target="_blank">老张的EPG Since 2019 (51zmt.top)</a>的区别如下，各位需要用直接用下面的链接：</strong></span>
             </p>
             <p style="text-wrap: wrap;">
                 <span style="font-size: 18px;"><strong>节目表下载地址：</strong></span><a href="./download/all-mxdyeah.xml" style="font-size: 18px;"><strong>all-mxdyeah.xml</strong></a>
@@ -124,16 +128,16 @@
             </tr>
             </thead>
             <tbody >
-            <tr>
-                <th></th>
-                <td><a href="#"><img src="#" alt="" height="30"></a></td>
-                <td>需要显示:暂未提供节目表 的频道</td>
-                <td>noepg</td>
-                <td>9999</td>
-                <td>所有</td>
-                <td>没有</td>
-                <td>七天内</td>
-            </tr>
+            <!--<tr>
+                <th>说明：</th>
+                <td>LOGO</td>
+                <td>节目名称</td>
+                <td>EPG对应相应Name,对于DIYP需要一一对应</td>
+                <td>EPG的ID号</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>-->
             {% for channel in channels %}
             <tr>
                     <th>{{ forloop.counter }}</th>
@@ -151,9 +155,9 @@
   </div>
   </body>
   <footer>
-    <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#987cb9 SIZE=3>
+    <hr>
         <div id="mxdyeah_diy" class="mxd_diy_footer mxd_diy_footer_zoom">
-            mxd's EPG by&nbsp;<a href="https://www.mxdyeah.top/">mxd & mxd Team.</a>
+            mxd's EPG by&nbsp;<a href="https://www.mxdyeah.top/" target="_blank">mxd & mxd Team.</a>
             <br>Built by <strong>mxd</strong> On Server: <em>Debian 11.</em>
             <br>Powered by mxdyeah.
             <br>Copyright&nbsp;©&nbsp;2021-2024 mxd Team.
