@@ -1,6 +1,4 @@
 #-*- coding:utf-8 -*-
-#未攫取成都没有能跳转到下一条，原因未知。未设置跳转下一条配置，但成功了就能到下一条了。
-
 import os, django, sys, datetime,platform
 from django.utils import timezone
 from utils.general import argvs_get, channel_ids_to_dict,in_exclude_channel
@@ -15,8 +13,6 @@ from utils.general import crawl_info,xmlinfo,dirs,add_info_title,add_info_desc,n
 recrawl, cname, crawl_dt, save_to_db = argvs_get(sys.argv)
 
 tz_sh = tz.gettz('Asia/Shanghai')
-# 设置时区 
-
 # 抓取入口
 
 def main():
@@ -182,7 +178,7 @@ def get_epg(channel, dt, func_arg=0):
 def gen_xml(sort):
     if cname:  #测试时不生成
         return 0
-    xmlhead = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE tv SYSTEM "http://api.torrent-tv.ru/xmltv.dtd"><tv generator-info-name="http://epg.51zmt.top:8000" generator-info-url="QQ 31849627">'
+    xmlhead = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE tv SYSTEM "http://api.torrent-tv.ru/xmltv.dtd"><tv generator-info-name="mxd-epg-xml" generator-info-url="https://epg.imxd.top/">'
     xmlbottom = '</tv>'
     get_days = crawl_info['gen_xml_days']
     xmldir = '%s/%s'%(dirs['share'],xmlinfo[sort]['basename'])
@@ -234,7 +230,7 @@ def gen_test_m3u(channels,test_dir):
                 grouptitle = '地方台'
 
             line = '#EXTINF:-1 tvg-logo="%s" tvg-id="%s" tvg-name="%s" group-title="%s",%s\n'%(logo,channel_id,tvgname,grouptitle,name)
-            line1 = 'http://192.168.2.1:1111/%s.ts\n'%(n)
+            line1 = 'http://192.168.1.1/%s.ts\n'%(n)
             f.write(line)
             f.write(line1)
     msg = '生成%s个频道的测试m3u文件：%s'%(channels.count(),dirs['testm3u_dir'])
