@@ -23,5 +23,5 @@ urlpatterns = [
     path('download/<str:title>',web.views.download),
     path('api/', include('web.urls')),
     path('admin/', admin.site.urls),
-    path('test/',web.views.d),
+    path('status/',web.views.statusepg),
 ]
