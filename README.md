@@ -1,19 +1,15 @@
 # mxd's EPG
-* 基于`Python3`及`django4`的节目表数据抓取及发布系统
+* 基于`Python3`及`Django4`的节目表数据抓取及发布系统
 * 网站地址:[mxd's EPG](https://epg.imxd.top/)
 * 有问题请在[Here!](https://imxd.top/d/10-epgbu-shu-jiao-cheng-ji-he)反馈！
 * 您也可以新建Issues！
 
 # ✨部署戳这里→[部署教程、常见问题](https://imxd.top/d/10-epgbu-shu-jiao-cheng-ji-he)
 
-# ⚠紧急更新！⚠
-## 请在部署之前运行
-```
-pip3 install pymysql django==4.2.11 mysql-connector-python -i https://pypi.tuna.tsinghua.edu.cn/simple
-```
-注意`django==4.2.11`，pip默认会使用django5.x！一定是`django==4.2.11`才可以运行！[原Issues](https://github.com/mxdabc/epg/issues/1)
+# 部署效果图👇
+![部署效果图](https://imxd.top/assets/files/2024-04-01/1711947744-130771-snipaste-2024-04-01-13-01-35.png)
 
-# 效果图
+# 实际使用效果图
 - 下面是在Prefect Player运行的照片，完美适配我的CQYX     
 - 需要CQYX点击下方链接↓   
 > CQYX: https://discuz.mxdyeah.top/mxdyeah_discuz_thread-37-1-1.html       

@@ -72,17 +72,12 @@ WSGI_APPLICATION = 'epg.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-#见Readme.md说明，数据库配置
+# https://imxd.top/d/10-epgbu-shu-jiao-cheng-ji-he
 DATABASES = {
-    'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'epg',
-            'USER': 'epg',
-            'PASSWORD': '密码',
-            'HOST': '127.0.0.1',
-            'PORT': '3306',
-    },
+  'default': {
+      'ENGINE': 'django.db.backends.sqlite3',
+      'NAME': BASE_DIR / 'db.sqlite3',
+  },
 }
 
 
