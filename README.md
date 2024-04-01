@@ -4,7 +4,7 @@
 * 有问题请在[Here!](https://imxd.top/d/10-epgbu-shu-jiao-cheng-ji-he)反馈！
 * 您也可以新建Issues！
 
-# ✨新手戳这里→[部署教程](https://imxd.top/d/10-epgbu-shu-jiao-cheng-ji-he)
+# ✨部署戳这里→[部署教程、常见问题](https://imxd.top/d/10-epgbu-shu-jiao-cheng-ji-he)
 
 # ⚠紧急更新！⚠
 ## 请在部署之前运行
@@ -12,14 +12,7 @@
 pip3 install pymysql django==4.2.11 mysql-connector-python -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 注意`django==4.2.11`，pip默认会使用django5.x！一定是`django==4.2.11`才可以运行！[原Issues](https://github.com/mxdabc/epg/issues/1)
-# 常见问题
-* 抓取报错没有获取川流Token看这里→[配置教程](https://discuz.mxdyeah.top/mxdyeah_discuz_thread-70-1-1.html)←
-* 我该如何添加其他节目？
 
-  * 部署完成后，打开 **[你的网站]/admin** 登录后添加抓取节目。
-  * 不懂的可以新建Issues提问或者在[Here!](https://discuz.mxdyeah.top/mxdyeah_discuz_forum-38-1.html)发新帖提问。
-- [使用方法&教程汇总贴](https://discuz.mxdyeah.top/mxdyeah_discuz_thread-68-1-1.html)
-* 报错`TypeError: force_insert must be a bool or tuple.`[→看这里解决方法←](https://github.com/mxdabc/epg/issues/1)
 # 效果图
 - 下面是在Prefect Player运行的照片，完美适配我的CQYX     
 - 需要CQYX点击下方链接↓   
@@ -59,79 +52,3 @@ pip3 install pymysql django==4.2.11 mysql-connector-python -i https://pypi.tuna.
 - requests
 - django
 - BeautifulSoup
-# 使用方法
-### 第一步，克隆本仓库，需要服务器提前安装wget、git、pip（或pip3）、python命令，在此不多赘述。
-```
-git clone https://github.com/mxdabc/epg/
-```
-### 第二步，导入数据库。
-> 程序默认[Sqlite3](https://www.sqlite.org/)数据库，但是测试MySQL性能更佳，特别是在节目EPG很多的时候。
-
-**推荐您使用MySQL!**    
-**MySQL部署教程**
-**如果您是[Sqlite3](https://www.sqlite.org/)数据库，可以直接导入目录下的db.sqlite3文件。**    
-**如果您是MySQL数据库，请手动转Sqlite3到MySQL**    
-#### 更改数据库（推荐MySQL）
-`epg/settings.py`在此文件中修改配置如下：
-```python
-DATABASES = {
-  'default': {
-          'ENGINE': 'django.db.backends.mysql',
-          'NAME': '数据库名称',
-          'USER': '数据库用户名称',
-          'PASSWORD': '数据库密码',
-          'HOST': '127.0.0.1',
-          'PORT': '3306',
-  },
-}
-```
-如果您是Sqlite3，可以更改```'ENGINE': 'django.db.backends.mysql',```到```'ENGINE': 'django.db.backends.sqlite3',``` 
-epg目录下面的settings.py里面有每一段语法的使用方法，浏览器打开链接即可
-#### SQlite3示例
-```python
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-DATABASES = {
-  'default': {
-      'ENGINE': 'django.db.backends.sqlite3',
-      'NAME': BASE_DIR / 'db.sqlite3',
-  },
-}
-```
-### 第三步，程序配置。
-`util/general.py` 中有大部分配置
-`crawl_info`:需要采集的节目天数、生成xml的天数、是否需要换源等
-`dirs`:生成测试文件目录
-`chuanliu_Authorization`:如果使用川流TV来源，需要提供此信息
-### 第四步，运行python脚本前需要安装的依赖
-```
-# pip(或pip3，看系统)执行以下语句：
-pip3 install pymysql django==4.2.11 mysql-connector-python
-```
-```
-#清华源加速
-pip3 install pymysql django==4.2.11 mysql-connector-python -i https://pypi.tuna.tsinghua.edu.cn/simple
-```
-> 如果安装完这些依赖库，程序仍旧无法运行，请自行搜索！   
-> 实在没办法去本仓库上方Issues反馈！
-### 第五步，抓取数据（运行web页面前必需）
-```python
-python main.py  #抓取数据并存入数据库，可设置为定时任务
-python main.py -channel #抓取所有来源的频道
-python main.py -n CCTV1 #单独测试某一频道  
-```
-另：抓取的频道会加入Channel_list表，需要自己手动整理进Channel表中才可以抓取
-### 第六步，启动Web及接口
-#### 启动Web
-```python
-python manage.py runserver 0.0.0.0:80
-```
-**这里的0.0.0.0:80代表服务器运行在80端口，如果需要修改端口，请修改80为其他**     
-**同时服务器需在防火墙放行相应端口，在此不多赘述**    
-#### 访问
-浏览器访问`http://ip地址:端口/`  查看已有数据抓取情况。   
-浏览器访问`http://ip地址:端口/admin/` 打开后台。   
-默认用户名密码：`admin/admin`请一定更改！   
-> DIYP接口`http://ip地址:端口/api/diyp/` 需要提供参数 `?ch=CCTV1&date=20230309`
-### 第七步，可选：配置Nginx反代、ssl加密证书（https）
-省略，大概步骤就是配置nginx代理127.0.0.1的某个端口，ssl也是nginx配置
