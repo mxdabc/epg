@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+#如果要配置Nginx反向代理，这里需要修改为你的域名
+CSRF_TRUSTED_ORIGINS = [ 'https://epg.imxd.top', ]
 
 # Application definition
 

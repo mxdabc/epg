@@ -6,8 +6,11 @@ from utils.aboutdb import get_html_info
 import datetime,re,json,os
 from dateutil import tz
 tz_sh = tz.gettz('Asia/Shanghai')
+# status监控页，请到templates/status.html配置
+# 相关配置一个在epg文件夹的urls.py,一个在web文件夹下的urls.py
 def statusepg(request):
     return render(request,'status.html')
+
 def index(request):
     crawl_days = crawl_info['gen_xml_days']
     start_date = datetime.datetime.now().strftime(u'%Y{y}%m{m}%d{d}').format(y='年', m='月', d='日')
