@@ -74,6 +74,16 @@ WSGI_APPLICATION = 'epg.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# ENGINE
+# Default: '' (Empty string)
+# 
+# The database backend to use. The built-in database backends are:
+# 
+# 'django.db.backends.postgresql'
+# 'django.db.backends.mysql'
+# 'django.db.backends.sqlite3'
+# 'django.db.backends.oracle'
+# You can use a database backend that doesn’t ship with Django by setting ENGINE to a fully-qualified path (i.e. mypackage.backends.whatever).
 # https://imxd.top/d/10-epgbu-shu-jiao-cheng-ji-he
 DATABASES = {
   'default': {
