@@ -10,6 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+"""
+目前变更为 Django 4.2,请各位参考文章时参考4.2
+"""
+
 from pathlib import Path
 import os
 
@@ -21,15 +25,31 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# 请先随机生成!!!
 SECRET_KEY = 'django-insecure-h+$18j4w!n3*9pk@wi3nb(oi&w=&*$c$dzw^7cgp5b4&14im&7'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
+"""
+WARNING: 正式环境下面的True改为False!
+"""
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 #如果要配置Nginx反向代理，这里需要修改为你的域名
 CSRF_TRUSTED_ORIGINS = [ 'https://epg.imxd.top', ]
+
+# Redis 缓存
+"""
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://default:RedisSERVER@127.0.0.1:6379",
+    }
+}
+"""
+
 
 # Application definition
 
@@ -50,6 +70,8 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    # "django.middleware.cache.FetchFromCacheMiddleware",
+    # "django.middleware.cache.UpdateCacheMiddleware",
 ]
 ROOT_URLCONF = 'epg.urls'
 
