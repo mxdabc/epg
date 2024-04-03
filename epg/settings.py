@@ -121,7 +121,7 @@ DATABASES = {
       "ENGINE": "django.db.backends.mysql",
       "NAME": "epg",
       "USER": "epg",
-      "PASSWORD": "NTA8SKPnRKTGkmz2",
+      "PASSWORD": "Change ME",
       "HOST": "127.0.0.1",
       "PORT": "3306",
   },
