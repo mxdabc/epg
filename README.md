@@ -1,10 +1,9 @@
 # [mxd's EPG](https://epg.imxd.top/)
 * 基于`Python3`及`Django4`的节目表数据抓取及发布系统
 * 网站地址:[mxd's EPG](https://epg.imxd.top/)
-* 有问题请在[Here!](https://imxd.top/d/10-epgbu-shu-jiao-cheng-ji-he)反馈！
 * 您也可以新建Issues！
 
-# ✨部署戳这里→[部署教程、常见问题](https://blog.mxdyeah.top/mxdyeah_blog_post/45.html)
+# ✨部署戳这里→[部署教程、常见问题](https://app.mxdyeah.top/docs/epg/epgbuild.html)
 
 # 预览图&实际效果图👇
 
