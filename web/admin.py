@@ -29,4 +29,5 @@ class Channel_listAdmin(admin.ModelAdmin):
     list_display = ('inner_channel_id','inner_name','out_channel_id','out_name','source')
     list_filter =('source',) #过滤器
     list_display_links = ('inner_name','out_name')
+    search_fields =('out_name', ) #来源列表搜索字段
 admin.site.register(Channel_list,Channel_listAdmin)
