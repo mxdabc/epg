@@ -1,86 +1,56 @@
 {% load static %}
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<!-- Required meta tags -->
+    
 <meta charset="utf-8">
-<!-- 网站Logo -->
 <link rel="icon" type="image/x-icon" href="https://res.mxdyeah.top/favicon.ico">
-<!-- Bing WebMaster 验证 不需要的建议删除 -->
 <meta name="msvalidate.01" content="FA1512DCB7775B210429A98C20AC95AF" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
 <meta name="description" content="免费EPG节目清单,IPTV">
 <meta name="keywords" content="IPTV,epg,m3u8,live,cctv,地方台,直播">
 <meta name="author" content="mxdyeah">
+<title>mxd's EPG - Powered by mxd</title>
+
+<!-- 本站请求 -->
 <link rel="stylesheet" href="{% static "/css/bootstrap/4.3.1/bootstrap.min.css" %}" crossorigin="anonymous">
 <script src="{% static "/js/jquery/2.1.1/jquery-2.1.1.min.js" %}" crossorigin="anonymous"></script>
 <script src="{% static "/js/jquery.lazyload.min.js" %}"></script>
 <script src="{% static "/js/popper/1.14.7/popper.min.js" %}"  crossorigin="anonymous"></script>
 <script src="{% static "/js/bootstrap/4.3.1/bootstrap.min.js" %}"  crossorigin="anonymous"></script>
-<title>mxd's EPG - Powered by mxd</title>
-<style>
-    .mxd_diy_footer {
-        margin: 0 auto;
-        width: 1200px;
-    }
 
-    #mxd_diy_footer .mxd_diy_footer {
-        width: auto;
-    }
+<!-- CDN 加速 -->
+<!--<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/popper.min.js"></script>-->
 
-    .mxd_diy_footer_zoom {
-        zoom: 1;
-    }
-    
-    .hidden {
-        display: none;
-    }
-</style>
+<!-- 自定义CSS、JS -->
+<link href="{% static "/css/mxd.css" %}" rel="stylesheet">
+<script src="{% static "/js/mxd.js" %}"></script>
+
 </head>
 <body>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script type="text/javascript">
-    $(function () {
-        $("img.lazy").lazyload();
-    });
-    function showContent() {
-        var content = document.getElementById("content");
-        content.classList.remove("hidden");
-    }
-    function toggleContent() {
-        var content = document.getElementById("content");
-        var toggleBtn = document.getElementById("toggleBtn");
-        
-        if (content.classList.contains("hidden")) {
-            content.classList.remove("hidden");
-            toggleBtn.innerHTML = "点击收起详细内容";
-        } else {
-            content.classList.add("hidden");
-            toggleBtn.innerHTML = "点击显示详细内容";
-        }
-    }
-</script>
 <div class="container bg-light">
-    <!-- <div style="text-align: justify;">
-        <img src="https://res.mxdyeah.top/picture.jsp/money.jpg" style="width:400px;float: right; margin-right: 10px; clear: both;">
-    </div> -->
-    <br>
+    <br />
     <h1>mxd's EPG</h1>
-    <br>
+    <br />
     <div style="text-align: justify;">
-        <img src="https://res.mxdyeah.top/picture.jsp/money.jpg" style="width:320px;float: right; margin-right: 8px; clear: both;">
+        <img src="https://res.mxdyeah.top/picture.jsp/money.jpg" style="height:320px; width:320px;float: right; clear: both;" alt="mxd赞赏码" title="mxd赞赏码">
     </div>
-    <p style="text-wrap: wrap;">
-        <span style="font-size: 18px;"><strong>当前EPG服务器版本:V2.1-20240330,Github上有我们的最新版本,请各位保持更新最新版本!</strong></span>
-        <h6>开源Github:<a href="https://github.com/mxdabc/epg/" target="_blank">&NonBreakingSpace;Github地址,请给我们点个Star!</a></h6>
-        <h6>DIYP影音无法使用请检查TXT里面的频道名称是否与下表的tvg-name一一对应。</h6>
-        
-    </p>
+    <div style="text-wrap: wrap;">
+        <div class="fontsize18px"><strong>当前EPG服务器版本:V2.2beta，Github上有我们的最新版本，请各位保持更新最新版本！</strong></div>
+        <div class="fontsize22px">开源Github:<a href="https://github.com/mxdabc/epg/" target="_blank">&NonBreakingSpace;Github地址，请给我们点个Star！</a>
+            <br />DIYP影音无法使用请检查TXT里面的频道名称是否与下表的tvg-name一一对应。<br />
+            <a href="./banip/">IP封禁名单</a><br />
+            ✨本站开启CC防护:<font style="color:red;">60</font>秒内,请求同一URI累计超过<font style="color:red;">60</font>次,封锁IP<font style="color:red;">60</font>秒,请各位合理使用!
+            <!--因域名备案原因，现迁移域名至https://epg.mxdyeah.top/,老域名https://epg.imxd.top/将在2024-05-01停用！-->
+        </div>
+    </div>
     <button onclick="toggleContent()">点击显示/收起详细内容</button>
     <div id="content" class="hidden">
         <p>
-            <br>
             <h3>搭配方案看这里！↓   👇</h3>
             <h3><a href="https://blog.mxdyeah.top/mxdyeah_blog_post/44.html" target="_blank">EPG+CQYX 最完美搭配方法（CCTV+地方台全部包含）</a></h3><br>
             <h6>参考:<a href="https://github.com/supzhang/epg" target="_blank">老张的EPG</a></h6>
@@ -166,7 +136,3 @@
         </div>
   </footer>
 </html>
-
-
-
-<!-- 请各位深度修改这个文件！！！ -->

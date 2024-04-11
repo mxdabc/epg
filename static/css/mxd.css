@@ -1,0 +1,36 @@
+.mxd_diy_footer {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+#mxd_diy_footer .mxd_diy_footer {
+    width: auto;
+}
+
+.mxd_diy_footer_zoom {
+    zoom: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.fontsize18px {
+    font-size: 18px;
+}
+
+.fontsize19px {
+    font-size: 19px;
+}
+
+.fontsize20px {
+    font-size: 20px;
+}
+
+.fontsize21px {
+    font-size: 21px;
+}
+
+.fontsize22px {
+    font-size: 22px;
+}
