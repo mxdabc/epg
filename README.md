@@ -4,6 +4,7 @@
 * 您也可以新建Issues！
 
 # ✨部署戳这里→[部署教程、常见问题](https://app.mxdyeah.top/docs/epg/epgbuild.html)
+# 使用、部署前必读→[教程必读页](https://app.mxdyeah.top/docs/epg/epgread.html)
 
 # 预览图&实际效果图👇
 
