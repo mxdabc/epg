@@ -24,6 +24,7 @@ class EpgAdmin(admin.ModelAdmin):
 admin.site.register(Epg,EpgAdmin)
 class Crawl_logAdmin(admin.ModelAdmin):
     list_display = ('dt', 'msg', 'level')
+    search_fields =('msg', ) #来源列表搜索字段
 admin.site.register(Crawl_log,Crawl_logAdmin)
 class Channel_listAdmin(admin.ModelAdmin):
     list_display = ('inner_channel_id','inner_name','out_channel_id','out_name','source')
