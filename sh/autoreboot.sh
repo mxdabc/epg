@@ -1,5 +1,5 @@
 #!/bin/bash
- 
+# 崩溃自动重启
 while true
 do
     if pgrep /usr/local/bin/uwsgi --ini /mxdyeah/epg/uwsgi.ini >/dev/null
