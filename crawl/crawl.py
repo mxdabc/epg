@@ -178,7 +178,7 @@ def get_epg(channel, dt, func_arg=0):
 def gen_xml(sort):
     if cname:  #测试时不生成
         return 0
-    xmlhead = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE tv SYSTEM "http://api.torrent-tv.ru/xmltv.dtd"><tv generator-info-name="mxd-epg-xml" generator-info-url="https://epg.imxd.top/">'
+    xmlhead = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE tv SYSTEM "http://api.torrent-tv.ru/xmltv.dtd"><tv generator-info-name="mxd-epg-xml" generator-info-url="https://epg.mxdyeah.top/">'
     xmlbottom = '</tv>'
     get_days = crawl_info['gen_xml_days']
     xmldir = '%s/%s'%(dirs['share'],xmlinfo[sort]['basename'])
