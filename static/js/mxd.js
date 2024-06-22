@@ -39,16 +39,6 @@ window.onload = function() {
                                                     I8   8I                                 
                                                      8   8I                                 
                                                       Y8P                                   `;
-    const content = `\n\n版本:V2.1-20240330 \n主页:https://www.mxdyeah.top/ \nGithub:https://github.com/mxdabc/epg`;
+    const content = `\n\n版本:V2.5-Github \n主页:https://www.mxdyeah.top/ \nGithub:https://github.com/mxdabc/epg`;
     console.info(`%c${title1} %c${title2} %c${content}`, styleTitle1, styleTitle2, styleContent);
-    
-    // 获取当前页面的URL
-    var currentUrl = window.location.href;
-    
-    // 使用正则表达式来匹配https://epg.mxdyeah.top/
-    if (!currentUrl.startsWith('https://epg.mxdyeah.top/')) 
-    {
-      // 如果不匹配，显示一个弹窗
-      alert("因域名备案原因，现迁移域名至https://epg.mxdyeah.top/，该域名将在5月1日停用");
-    }
 }
