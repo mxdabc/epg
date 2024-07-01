@@ -1,4 +1,6 @@
-# [mxd's EPG](https://epg.imxd.top/)
+![epg](https://socialify.git.ci/mxdabc/epg/image?description=1&descriptionEditable=%E6%8A%93%E5%8F%96%E5%A4%9A%E5%B9%B3%E5%8F%B0EPG%EF%BC%8C%E5%B9%B6%E7%94%9F%E6%88%90TVXML%E6%96%87%E4%BB%B6%E5%92%8CDIYP%E6%8E%A5%E5%8F%A3%E3%80%82&font=Jost&forks=1&issues=1&language=1&name=1&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Auto)
+
+# mxd's EPG
 * 基于`Python3`及`Django4`的节目表数据抓取及发布系统
 * 网站地址:[mxd's EPG](https://epg.imxd.top/)
 * 您也可以新建Issues！
