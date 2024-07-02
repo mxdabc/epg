@@ -5,7 +5,17 @@ from utils.general import noepgjson,crawl_info,root_dir
 from utils.aboutdb import get_html_info
 import datetime,re,json,os
 from dateutil import tz
+import json
+
+import xml.etree.ElementTree as ET
+from urllib.parse import parse_qsl, unquote_plus, urlencode,parse_qs
 tz_sh = tz.gettz('Asia/Shanghai')
+
+
+# status监控页，请到templates/status.html配置
+# 相关配置一个在epg文件夹的urls.py,一个在web文件夹下的urls.py
+def statusepg(request):
+    return render(request,'status.html')
 
 def index(request):
     crawl_days = crawl_info['gen_xml_days']
@@ -33,6 +43,33 @@ def download(requests,title):
     response['Content-Type']='application/octet-stream'
     return response
 def diyp(request):
+    
+    tvg_names = request.GET['ch']
+               # 1. 获取原始的查询字符串
+   # 1. 获取原始的查询字符串
+    query_string = request.META['QUERY_STRING']
+     # 2. 使用正则表达式进行处理，保留正确的格式
+    # 使用正则表达式进行替换和处理
+    query_string = re.sub(r'CCTV(\d+)\++', r'CCTV-\1+', query_string)
+    query_string = re.sub(r'\+', '%2B', query_string)  # 将剩余的+替换为%2B
+    
+    # 3. 手动解析查询字符串，保留特殊字符（包括 '+'）
+    query_params = parse_qs(query_string, keep_blank_values=True)
+            # 4. 标准化 'ch' 参数
+    if 'ch' in query_params:
+        tvg_name = query_params['ch'][0]  # 获取 'ch' 参数的第一个值
+        tvg_name = standardize_channel_name(tvg_name)  # 假设有一个标准化函数
+        query_params['ch'] = [tvg_name]  # 更新 'ch' 参数值为标准化后的值
+    # 5. 使用更新后的查询参数重新构建查询字符串
+    new_query_string = urlencode(query_params, doseq=True)
+    
+    # 6. 更新 request.GET 和 request.META['QUERY_STRING']
+    request.GET = request.GET.copy()  # 复制原始的 GET 参数
+    if 'ch' in query_params:
+        request.GET['ch'] = query_params['ch'][0]  # 更新 'ch' 参数的值
+    request.META['QUERY_STRING'] = new_query_string  # 更新查询字符串
+    tvg_name = request.GET['ch']
+    tvg_date = request.GET['date']
     ret = single_channel_epg(request)
     ret_epgs = ret['epgs']
     datas = []
@@ -49,7 +86,9 @@ def diyp(request):
         datas.append(epg1)
 
     ret1 = {
-        "channel_name": ret['channel'],
+        "tvg_name":tvg_names,
+        "tvg_date":tvg_date,
+        "channel_name":ret['channel'],
         "date": ret['epg_date'].strftime('%Y-%m-%d'),
         "epg_data":datas,
     }
@@ -67,7 +106,7 @@ def web_single_channel_epg(request):
         epg = {
             'start': '',
             'end': '',
-            'title': '找不到节目表-%s'%ret['msg'],
+            'title': '没有此日期节目信息--%s'%ret['msg'],
             'desc': '',
         }
         ret_epgs = [epg]
@@ -86,6 +125,8 @@ def web_single_channel_epg(request):
         'source':source,
     }
     return render(request,'single_channel_epgs.html',context=ret)
+
+
 #请求某个频道数据的通用接口
 def single_channel_epg(request):
     tvg_name = ''
@@ -97,7 +138,7 @@ def single_channel_epg(request):
         tvg_name = request.GET['ch']
         if tvg_name in ["CCTV5 ","IPTV5 ","IPTV6 ","IPTV3 "]:
             tvg_name = tvg_name.strip() + '+'
-        date_re = re.search('(\d{4})\D(\d+)+\D(\d+)', request.GET['date'])
+        date_re = re.search(r'(\d{4})(?:\D?)(\d{2})(?:\D?)(\d{2})', request.GET['date'])
         if date_re:
             need_date = datetime.date(int(date_re.group(1)), int(date_re.group(2)), int(date_re.group(3)))
         channels = Channel.get_spec_channel_strict(Channel,tvg_name)
@@ -128,3 +169,33 @@ def single_channel_epg(request):
     }
     return ret
 
+def standardize_channel_name(channel):
+        
+    tid = channel.upper()
+    # 第一轮清理，移除特定格式的标识符
+    re_patterns = r'\[.*?\]|[0-9\.]+M|[0-9]{3,4}[pP]?|[0-9\.]+FPS'
+    tid = re.sub(re_patterns, '', tid)
+    tid = tid.strip()
+    # 第二轮清理，移除特定的词汇和结尾标识符
+    re_patterns = r'超高清|超清|高清|高清$|蓝光|频道|频道$|标清|FHD|HD|HD$|HEVC|HDR|-|\s+'
+    tid = re.sub(re_patterns, '', tid)
+    tid = tid.strip()
+
+    # 处理特定的 CCTV 格式
+    if 'CCTV0' in tid:
+        tid = re.sub(r'CCTV0+(\d+)', r'CCTV\1', tid)
+    # 对包含 CCTV 但不包含特定子字符串的情况进行处理
+    if 'CCTV' in tid and 'CCTV4K' not in tid and 'CCTV5+' not in tid:
+        re_pattern = r'CCTV[0-9+]{1,2}[48]?K?'
+        matches = re.findall(re_pattern, tid)
+        if matches:
+            tid = tid.replace('4K', '', 1)
+        else:
+            re_pattern = r'CCTV[^0-9]+'
+            matches = re.findall(re_pattern, tid)
+            if matches:
+                tid = tid.replace('CCTV', '', 1)
+    # 特定替换
+    tid = tid.replace('BTV', '北京')
+    return tid
+    
