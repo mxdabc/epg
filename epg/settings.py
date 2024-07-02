@@ -32,16 +32,17 @@ ALLOWED_HOSTS = ['https://epg.imxd.top', 'https://epg.mxdyeah.top']
 # DENY ：表示该页面不允许在 frame 中展示，即便是在相同域名的页面中嵌套也不允许
 # SAMEORIGIN ：表示该页面可以在相同域名页面的 frame 中展示
 # ALLOW-FROM uri ：表示该页面可以在指定来源的 frame 中展示
-# X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+## X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # 防止浏览器猜测资产的内容类型
 SECURE_CONTENT_TYPE_NOSNIFF = False 
 
 # 也是允许域名
-CSRF_TRUSTED_ORIGINS = [ 'https://epg.imxd.top', 'https://epg.mxdyeah.top']
+CSRF_TRUSTED_ORIGINS = ['https://epg.imxd.top', 'https://epg.mxdyeah.top']
 
 #如果要配置Nginx反向代理，这里需要修改为你的域名
-CSRF_TRUSTED_ORIGINS = [ 'https://epg.imxd.top', ]
+CSRF_TRUSTED_ORIGINS = ['https://epg.imxd.top']
 
 # Redis缓存，不需要的禁用
 CACHES = {
@@ -113,12 +114,16 @@ WSGI_APPLICATION = 'epg.wsgi.application'
 
 # 教程
 # https://blog.mxdyeah.top/
+
+# SQlite3 被废弃,如果想用SQlite3继续请参考以下代码:
+"""
 DATABASES = {
   'default': {
       'ENGINE': 'django.db.backends.sqlite3',
       'NAME': BASE_DIR / 'db.sqlite3',
   },
 }
+"""
 
 # For MySQL 数据库:
 """
