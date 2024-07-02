@@ -39,6 +39,6 @@ window.onload = function() {
                                                     I8   8I                                 
                                                      8   8I                                 
                                                       Y8P                                   `;
-    const content = `\n\n版本:V2.5-Github \n主页:https://www.mxdyeah.top/ \nGithub:https://github.com/mxdabc/epg`;
+    const content = `\n\n版本:V2.7-Github \n主页:https://www.mxdyeah.top/ \nGithub:https://github.com/mxdabc/epg`;
     console.info(`%c${title1} %c${title2} %c${content}`, styleTitle1, styleTitle2, styleContent);
 }
