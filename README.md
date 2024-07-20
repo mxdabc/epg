@@ -1,3 +1,5 @@
+# ⚠后台密码不对，登录不上的请点击这里[修改后台密码](https://github.com/mxdabc/epg/releases/tag/v2.7)
+
 ![epg](https://socialify.git.ci/mxdabc/epg/image?description=1&descriptionEditable=%E6%8A%93%E5%8F%96%E5%A4%9A%E5%B9%B3%E5%8F%B0EPG%EF%BC%8C%E5%B9%B6%E7%94%9F%E6%88%90TVXML%E6%96%87%E4%BB%B6%E5%92%8CDIYP%E6%8E%A5%E5%8F%A3%E3%80%82&font=Jost&forks=1&issues=1&language=1&name=1&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Auto)    
 
 # mxd's EPG
