@@ -128,7 +128,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`, `first_name`) VALUES
-(1, 'pbkdf2_sha256$600000$oLXjllddOXrqJwNzKkk4vz$XG7jciyfvn7TgQGjollwM/Oj3cLn9Ruf77CdAkm6udk=', '2023-12-31 16:00:00', '1', 'admin', '', 'local@localhost', 1, '1', '2023-12-31 16:00:00', '');
+(1, 'pbkdf2_sha256$320000$c7MpurpxDm6E3VHnHpfa2Z$5RNXiGp4KukmuSZElJ/X3UY0LWlS2O/66rE/0IJUI3Y=', '2023-12-31 16:00:00', '1', 'admin', '', 'local@localhost', 1, '1', '2023-12-31 16:00:00', '');
 
 -- --------------------------------------------------------
 
