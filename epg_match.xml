@@ -3,7 +3,7 @@
    <epg>
     <tvid>1</tvid>
     <epgid>CCTV1</epgid>
-    <name>央视综合,CCTV-1综合,CCTV-1,CCTV1,CCTV1综合,CCTV-1HD</name>
+    <name>央视综合,CCTV-1综合,CCTV-1,CCTV1,CCTV1综合,CCTV-1HD,CCTV-1綜合,CCTV1綜合,央眎綜合</name>
     <status>1</status>
     <note>央视综合</note>
 </epg>
@@ -11,7 +11,7 @@
 <epg>
     <tvid>2</tvid>
     <epgid>CCTV2</epgid>
-    <name>央视财经,CCTV-2财经,CCTV-2,CCTV2,CCTV2财经</name>
+    <name>央视财经,CCTV-2财经,CCTV-2,CCTV2,CCTV2财经,CCTV-2財經,CCTV2財經,央眎財經</name>
     <status>1</status>
     <note>央视财经</note>
 </epg>
@@ -19,7 +19,7 @@
 <epg>
     <tvid>3</tvid>
     <epgid>CCTV3</epgid>
-    <name>央视综艺,CCTV-3综艺,CCTV-3,CCTV3,CCTV3综艺</name>
+    <name>央视综艺,CCTV-3综艺,CCTV-3,CCTV3,CCTV3综艺,CCTV-3綜藝,CCTV3綜藝,央眎綜藝</name>
     <status>1</status>
     <note>央视综艺</note>
 </epg>
