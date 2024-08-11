@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<epgs>
+   <epg>
+    <tvid>1</tvid>
+    <epgid>CCTV1</epgid>
+    <name>央视综合,CCTV-1综合,CCTV-1,CCTV1,CCTV1综合,CCTV-1綜合,CCTV1綜合,央眎綜合</name>
+    <status>1</status>
+    <note>央视综合</note>
+</epg>
+
+<epg>
+    <tvid>2</tvid>
+    <epgid>CCTV2</epgid>
+    <name>央视财经,CCTV-2财经,CCTV-2,CCTV2,CCTV2财经,CCTV-2財經,CCTV2財經,央眎財經</name>
+    <status>1</status>
+    <note>央视财经</note>
+</epg>
+
+<epg>
+    <tvid>3</tvid>
+    <epgid>CCTV3</epgid>
+    <name>央视综艺,CCTV-3综艺,CCTV-3,CCTV3,CCTV3综艺,CCTV-3綜藝,CCTV3綜藝,央眎綜藝</name>
+    <status>1</status>
+    <note>央视综艺</note>
+</epg>
+
+<epg>
+    <tvid>4</tvid>
+    <epgid>CCTV4</epgid>
+    <name>央视国际,CCTV-4国际,CCTV-4,CCTV4,CCTV4国际,CCTV-4中文国际,CCTV4中文國際,CCTV-4国际亚洲,CCTV-4國際亞洲</name>
+    <status>1</status>
+    <note>央视国际</note>
+</epg>
+
+<epg>
+    <tvid>5</tvid>
+    <epgid>CCTV5+</epgid>
+    <name>央视体育赛事,CCTV5⁺体育赛事,CCTV5⁺,CCTV-5⁺,CCTV-5⁺体育赛事,CCTV-体育赛事,CCTV5体育赛事,CCTV-5+赛事,CCTV5+赛事,CCTV5PLUS,CCTV5Plus,CCTV5加</name>
+    <status>1</status>
+    <note>央视体育赛事</note>
+</epg>
+
+<epg>
+    <tvid>6</tvid>
+    <epgid>CCTV5</epgid>
+    <name>央视体育,CCTV-5体育,CCTV-5,CCTV5,CCTV5体育</name>
+    <status>1</status>
+    <note>央视体育</note>
+</epg>
+
+<epg>
+    <tvid>7</tvid>
+    <epgid>CCTV6World</epgid>
+    <name>央视电影国际,央眎電影國際</name>
+    <status>1</status>
+    <note>央视电影国际</note>
+</epg>
+
+<epg>
+    <tvid>8</tvid>
+    <epgid>CCTV6</epgid>
+    <name>央视电影,CCTV-6电影,CCTV-6,CCTV6,CCTV6电影,CCTV-6電影,CCTV6電影</name>
+    <status>1</status>
+    <note>央视电影</note>
+</epg>
+
+<epg>
+    <tvid>9</tvid>
+    <epgid>CCTV7</epgid>
+    <name>央视军事农业,CCTV-7国防军事,CCTV-7,CCTV7,CCTV7国防军事,CCTV-7國防軍事,CCTV7國防軍事,CCTV-7国防,CCTV7國防,CCTV7-國防軍事</name>
+    <status>1</status>
+    <note>央视军事农业</note>
+</epg>
+
+<epg>
+    <tvid>10</tvid>
+    <epgid>CCTV8</epgid>
+    <name>央视电视剧,CCTV-8电视剧,CCTV-8,CCTV8,CCTV8电视剧,CCTV-8電視劇,CCTV8電視劇,CCTV-8电视,CCTV8电视</name>
+    <status>1</status>
+    <note>央视电视剧</note>
+</epg>
+
+<epg>
+    <tvid>11</tvid>
+    <epgid>CCTV9</epgid>
+    <name>央视纪录,CCTV-9纪录,CCTV-9,CCTV9,CCTV9纪录,CCTV-9紀錄,CCTV9紀錄,CCTV9-紀錄</name>
+    <status>1</status>
+    <note>央视纪录</note>
+</epg>
+
+<epg>
+    <tvid>12</tvid>
+    <epgid>CCTV10</epgid>
+    <name>央视科教,CCTV-10科教,CCTV-10,CCTV10,CCTV10科教</name>
+    <status>1</status>
+    <note>央视科教</note>
+</epg>
+
+<epg>
+    <tvid>13</tvid>
+    <epgid>CCTV11</epgid>
+    <name>央视戏曲,CCTV-11戏曲,CCTV-11,CCTV11,CCTV11戏曲,CCTV-11戲曲,CCTV11戲曲</name>
+    <status>1</status>
+    <note>央视戏曲</note>
+</epg>
+
+<epg>
+    <tvid>14</tvid>
+    <epgid>CCTV12</epgid>
+    <name>央视社会与法,CCTV-12法制,CCTV-12,CCTV12,CCTV12法制,CCTV-12社會與法,CCTV12社會與法</name>
+    <status>1</status>
+    <note>央视社会与法</note>
+</epg>
+
+<epg>
+    <tvid>15</tvid>
+    <epgid>CCTV13</epgid>
+    <name>央视新闻,CCTV-13新闻,CCTV-13,CCTV13,CCTV13新闻,CCTV-13新聞,CCTV13新聞</name>
+    <status>1</status>
+    <note>央视新闻</note>
+</epg>
+
+<epg>
+    <tvid>16</tvid>
+    <epgid>CCTV14</epgid>
+    <name>央视少儿,CCTV-14少儿,CCTV-14,CCTV14,CCTV14少儿,CCTV-14少兒,CCTV14少兒</name>
+    <status>1</status>
+    <note>央视少儿</note>
+</epg>
+
+<epg>
+    <tvid>17</tvid>
+    <epgid>CCTV15</epgid>
+    <name>央视音乐,CCTV-15音乐,CCTV-15,CCTV15,CCTV15音乐,CCTV-15音樂,CCTV15音樂</name>
+    <status>1</status>
+    <note>央视音乐</note>
+</epg>
+
+<epg>
+    <tvid>18</tvid>
+    <epgid>CCTV-17</epgid>
+    <name>CCTV-17农村农业,CCTV-17農村農業,农村农业,農村農業</name>
+    <status>1</status>
+    <note>农村农业</note>
+</epg>
+
+<epg>
+    <tvid>26</tvid>
+    <epgid>中国教育1台</epgid>
+    <name>教育一套,CETV2,教育一套</name>
+    <status>1</status>
+    <note>教育一套</note>
+</epg>
+
+<epg>
+    <tvid>27</tvid>
+    <epgid>中国教育2台</epgid>
+    <name>教育二套,CETV2,教育二套</name>
+    <status>1</status>
+    <note>教育二套</note>
+</epg>
+
+<epg>
+    <tvid>28</tvid>
+    <epgid>中国教育3台</epgid>
+    <name>教育三套,CETV3,教育三套</name>
+    <status>1</status>
+    <note>教育三套</note>
+</epg>
+
+</epgs>
