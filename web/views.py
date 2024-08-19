@@ -35,17 +35,16 @@ def download(requests,title):
 def diyp(request):
     
     tvg_names = request.GET['ch']
-               # 1. 获取原始的查询字符串
-   # 1. 获取原始的查询字符串
+    # 1. 获取原始的查询字符串
     query_string = request.META['QUERY_STRING']
-     # 2. 使用正则表达式进行处理，保留正确的格式
+    # 2. 使用正则表达式进行处理，保留正确的格式
     # 使用正则表达式进行替换和处理
     query_string = re.sub(r'CCTV(\d+)\++', r'CCTV-\1+', query_string)
     query_string = re.sub(r'\+', '%2B', query_string)  # 将剩余的+替换为%2B
     
     # 3. 手动解析查询字符串，保留特殊字符（包括 '+'）
     query_params = parse_qs(query_string, keep_blank_values=True)
-            # 4. 标准化 'ch' 参数
+    # 4. 标准化 'ch' 参数
     if 'ch' in query_params:
         tvg_name = query_params['ch'][0]  # 获取 'ch' 参数的第一个值
         tvg_name = standardize_channel_name(tvg_name)  # 假设有一个标准化函数
@@ -91,17 +90,16 @@ def diyp(request):
 def mxdepg(request):
     
     tvg_names = request.GET['ch']
-               # 1. 获取原始的查询字符串
-   # 1. 获取原始的查询字符串
+    # 1. 获取原始的查询字符串
     query_string = request.META['QUERY_STRING']
-     # 2. 使用正则表达式进行处理，保留正确的格式
+    # 2. 使用正则表达式进行处理，保留正确的格式
     # 使用正则表达式进行替换和处理
     query_string = re.sub(r'CCTV(\d+)\++', r'CCTV-\1+', query_string)
     query_string = re.sub(r'\+', '%2B', query_string)  # 将剩余的+替换为%2B
     
     # 3. 手动解析查询字符串，保留特殊字符（包括 '+'）
     query_params = parse_qs(query_string, keep_blank_values=True)
-            # 4. 标准化 'ch' 参数
+    # 4. 标准化 'ch' 参数
     if 'ch' in query_params:
         tvg_name = query_params['ch'][0]  # 获取 'ch' 参数的第一个值
         tvg_name = standardize_channel_name(tvg_name)  # 假设有一个标准化函数
