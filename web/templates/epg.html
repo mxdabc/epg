@@ -12,20 +12,21 @@
     <meta name="keywords" content="IPTV,epg,m3u8,live,cctv,地方台,直播">
     <meta name="author" content="mxdyeah">
     <title>mxd's EPG DEV - Powered by mxd</title>
-    <link rel="stylesheet" href="{% static "./css/bootstrap/4.3.1/bootstrap.min.css" %}" crossorigin="anonymous">
-    <script src="{% static "./js/jquery/2.1.1/jquery-2.1.1.min.js" %}" crossorigin="anonymous"></script>
-    <script src="{% static "./js/jquery.lazyload.min.js" %}"></script>
-    <script src="{% static "./js/popper/1.14.7/popper.min.js" %}" crossorigin="anonymous"></script>
-    <script src="{% static "./js/bootstrap/4.3.1/bootstrap.min.js" %}" crossorigin="anonymous"></script>
-    <link href="{% static "./css/mxd.css" %}" rel="stylesheet">
-    <script src="{% static "./js/mxd.js" %}"></script>
+    <link rel="stylesheet" href="{% static " ./css/bootstrap/4.3.1/bootstrap.min.css" %}" crossorigin="anonymous">
+    <script src="{% static " ./js/jquery/2.1.1/jquery-2.1.1.min.js" %}" crossorigin="anonymous"></script>
+    <script src="{% static " ./js/jquery.lazyload.min.js" %}"></script>
+    <script src="{% static " ./js/popper/1.14.7/popper.min.js" %}" crossorigin="anonymous"></script>
+    <script src="{% static " ./js/bootstrap/4.3.1/bootstrap.min.js" %}" crossorigin="anonymous"></script>
+    <link href="{% static " ./css/mxd.css" %}" rel="stylesheet">
+    <script src="{% static " ./js/mxd.js" %}"></script>
 
 </head>
 
 <body>
     <div class="container bg-light">
         <div style="text-align: justify;">
-            <img src="https://cdn.picui.cn/vip/2024/06/01/665b10ca87e86.png" style="height:320px; width:320px;float: right; clear: both;" alt="QQ扫码加群" title="QQ扫码加群">
+            <img src="https://cdn.picui.cn/vip/2024/06/01/665b10ca87e86.png"
+                style="height:320px; width:320px;float: right; clear: both;" alt="QQ扫码加群" title="QQ扫码加群">
         </div>
         <br />
         <h1>mxd's EPG <em>Dev</em></h1>
@@ -34,30 +35,30 @@
             <div class="fontsize18px">
                 <em>当前EPG服务器版本:V2.5-Github</em>&nbsp;
                 <div class="fontsize22px">
-                DIYP接口<code>https://[ip或域名]/api/diyp/</code><br>使用DIYP需要提供参数,例如:<code>?ch=CCTV1&amp;date=20230701</code>
-                <br />
-                XML下载地址<code>https://[ip或域名]/download/all-mxdyeah.xml</code>
+                    DIYP接口<code>https://[ip或域名]/api/diyp/</code><br>使用DIYP需要提供参数,例如:<code>?ch=CCTV1&amp;date=20230701</code>
+                    <br />
+                    XML下载地址<code>https://[ip或域名]/download/all-mxdyeah.xml</code>
+                </div>
             </div>
-        </div>
-        <p style="text-wrap: wrap;">
-        <div style="font-size: 22px;"><strong>EPG文件中提供{{ channel_no }}个频道 {{ crawl_day }}天内节目表共 {{ epg_no }}
-                条，<br />现在提供时间为： {{ start_date }} - {{ end_date }} </strong></div>
-        </p>
-        <table class="table table-striped table-primary table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col"></th>
-                    <th scope="col">频道</th>
-                    <th scope="col">tvg-name</th>
-                    <th scope="col">tvg-id</th>
-                    <th scope="col">分类</th>
-                    <th scope="col">来源</th>
-                    <th scope="col">最新节目日期</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!--<tr>
+            <p style="text-wrap: wrap;">
+            <div style="font-size: 22px;"><strong>EPG文件中提供{{ channel_no }}个频道 {{ crawl_day }}天内节目表共 {{ epg_no }}
+                    条，<br />现在提供时间为： {{ start_date }} - {{ end_date }} </strong></div>
+            </p>
+            <table class="table table-striped table-primary table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col"></th>
+                        <th scope="col">频道</th>
+                        <th scope="col">tvg-name</th>
+                        <th scope="col">tvg-id</th>
+                        <th scope="col">分类</th>
+                        <th scope="col">来源</th>
+                        <th scope="col">最新节目日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr>
                     <th>说明：</th>
                     <td>LOGO</td>
                     <td>节目名称</td>
@@ -67,32 +68,33 @@
                     <td></td>
                     <td></td>
                 </tr>-->
-                {% for channel in channels %}
-                <tr>
-                    <th>{{ forloop.counter }}</th>
-                    <td><a href="{{ channel.logo }}"><img class="lazy" data-original="{{ channel.logo }}"
-                                alt="{{ channel.tvg_name }}" height="30"></a></td>
-                    <td><a href="/api/web/?ch={{ channel.tvg_name }}&date={{ start_date_no }}">{{ channel.name }}</a></td>
-                    <td>{{ channel.tvg_name }}</td>
-                    <td>{{ channel.id }}</td>
-                    <td>{{ channel.sort }}</td>
-                    <td>{{ channel.source }}</td>
-                    <td>{{ channel.last_program_date }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    <footer>
-        <hr>
-        <div id="mxdyeah_diy" class="container bg-light mxd_diy_footer mxd_diy_footer_zoom">
-            mxd's EPG by&nbsp;<a href="https://www.mxdyeah.top/" target="_blank">mxd & mxd Team.</a>
-            <br>Built by <strong>mxd</strong> On Server: <em>Debian 12.</em>
-            <br>Powered by mxdyeah.
-            <br>Copyright&nbsp;©&nbsp;2021-2024 mxd Team.
-            <br>
+                    {% for channel in channels %}
+                    <tr>
+                        <th>{{ forloop.counter }}</th>
+                        <td><a href="{{ channel.logo }}"><img class="lazy" data-original="{{ channel.logo }}"
+                                    alt="{{ channel.tvg_name }}" height="30"></a></td>
+                        <td><a href="/api/web/?ch={{ channel.tvg_name }}&date={{ start_date_no }}">{{ channel.name
+                                }}</a></td>
+                        <td>{{ channel.tvg_name }}</td>
+                        <td>{{ channel.id }}</td>
+                        <td>{{ channel.sort }}</td>
+                        <td>{{ channel.source }}</td>
+                        <td>{{ channel.last_program_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-    </footer>
+        <footer>
+            <hr>
+            <div id="mxdyeah_diy" class="container bg-light mxd_diy_footer mxd_diy_footer_zoom">
+                mxd's EPG by&nbsp;<a href="https://www.mxdyeah.top/" target="_blank">mxd & mxd Team.</a>
+                <br>Built by <strong>mxd</strong> On Server: <em>Debian 12.</em>
+                <br>Powered by mxdyeah.
+                <br>Copyright&nbsp;©&nbsp;2021-2024 mxd Team.
+                <br>
+            </div>
+        </footer>
 </body>
 
 </html>

@@ -8,7 +8,7 @@ function showContent() {
 function toggleContent() {
     var content = document.getElementById("content");
     var toggleBtn = document.getElementById("toggleBtn");
-    
+
     if (content.classList.contains("hidden")) {
         content.classList.remove("hidden");
         toggleBtn.innerHTML = "点击收起详细内容";
@@ -18,7 +18,7 @@ function toggleContent() {
     }
 }
 
-window.onload = function() {
+window.onload = function () {
     const styleTitle1 = "font-size: 22px;font-weight: 600;color: rgb(51,204,255);";
     const styleTitle2 = "font-size: 12px;color: rgb(51,51,204);";
     const styleContent = "color: rgb(30,152,255);";
@@ -39,6 +39,6 @@ window.onload = function() {
                                                     I8   8I                                 
                                                      8   8I                                 
                                                       Y8P                                   `;
-    const content = `\n\n版本:V2.7-Github \n主页:https://www.mxdyeah.top/ \nGithub:https://github.com/mxdabc/epg`;
+    const content = `\n\n版本:V3.0-Github \n主页:https://www.mxdyeah.top/ \nGithub:https://github.com/mxdabc/epg`;
     console.info(`%c${title1} %c${title2} %c${content}`, styleTitle1, styleTitle2, styleContent);
 }
