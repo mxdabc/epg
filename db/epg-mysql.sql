@@ -325,7 +325,7 @@ INSERT INTO `web_channel` (`id`, `channel_id`, `tvg_name`, `name`, `sort`, `logo
 (72, '<tvsou:ssws#weishi><tvmao:SSTV-SANSHATV><nowtv:G05-553>', '三沙卫视', '三沙卫视', '卫视', 'https://live.mxdyeah.top/logo/三沙卫视.png', '2024-04-13', '2024-04-11 16:32:58', '2023-07-01 00:00:00', NULL, 1, 1, 'tvmao', 1, NULL, '三沙卫视'),
 (73, '<chuanliu:3393><tvmao:CETV-CETV1><zhongshu:cetv1><tvsou:5a44bb16#yangshi>', '中国教育1台', '教育1台', '卫视', 'https://live.mxdyeah.top/logo/CETV1.png', '2024-04-13', '2024-04-11 16:32:59', '2023-07-01 00:00:00', NULL, 1, 1, 'chuanliu', 1, NULL, '^(中国)??教育(电视台)??(1|一)'),
 (74, '<chuanliu:3394><tvmao:CETV-CETV2><tvsou:e04d023a#yangshi>', '中国教育2台', '教育2台', '数字付费', 'https://live.mxdyeah.top/logo/CETV4.png', '2024-04-13', '2024-04-11 16:33:00', '2023-07-01 00:00:00', NULL, 1, 1, 'chuanliu', 0, NULL, '^(中国)??教育(电视台)??(2|二)'),
-(76, '<tvmao:HUNANTV-HUNANTV1>', '湖南卫视', '湖南卫视', '卫视', 'https://live.imxd.top/logo/湖南卫视.png', '2024-04-13', '2024-04-11 16:33:01', '2024-04-09 15:42:17', NULL, 1, 1, 'tvmao', 1, NULL, '湖南卫视');
+(76, '<tvmao:HUNANTV-HUNANTV1>', '湖南卫视', '湖南卫视', '卫视', 'https://live.mxdyeah.top/logo/湖南卫视.png', '2024-04-13', '2024-04-11 16:33:01', '2024-04-09 15:42:17', NULL, 1, 1, 'tvmao', 1, NULL, '湖南卫视');
 
 -- --------------------------------------------------------
 
