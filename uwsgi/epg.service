@@ -1,0 +1,17 @@
+[Unit]
+Description=uWSGI service for mxdEPG APP
+After=network.target
+
+[Service]
+ExecStart=/mxdyeah/epg/pyenv/bin/uwsgi --ini /mxdyeah/epg/uwsgi/uwsgi.ini --master --need-app
+WorkingDirectory=/mxdyeah/epg
+Environment="PATH=/mxdyeah/epg/pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+Type=forking
+ExecStop=/usr/bin/kill -SIGTERM $(cat /mxdyeah/epg/uwsgi/uwsgi.pid)
+PIDFile=/mxdyeah/epg/uwsgi/uwsgi.pid
+
+[Install]
+WantedBy=multi-user.target

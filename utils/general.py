@@ -43,13 +43,13 @@ in_exclude_channel = {
     "include_xml": [],  ##生成数据时，不会分类阻止也会提供频道信息   单频道
 }
 xmlinfo = {
-    "all": {"basename": "all-mxdyeah.xml", "sortname": "all"},
-    "yangwei": {"basename": "cc-mxdyeah.xml", "sortname": ["央视", "卫视"]},
+    "all": {"basename": "all.xml", "sortname": "all"},
+    "yangwei": {"basename": "cc.xml", "sortname": ["央视", "卫视"]},
     "difang": {
-        "basename": "difang-mxdyeah.xml",
+        "basename": "difang.xml",
         "sortname": ["数字付费", "辽宁", "山东", "湖北", "四川"],
     },
-    "oversea": {"basename": "gat-mxdyeah.xml", "sortname": ["香港", "台湾", "海外"]},
+    "oversea": {"basename": "gat.xml", "sortname": ["香港", "台湾", "海外"]},
 }
 
 
